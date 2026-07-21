@@ -1,0 +1,5 @@
+# Standard library modules (included with Python, no installation needed)
+# sys csv json os re base64 argparse urllib.request urllib.error concurrent.futures
+
+# External dependencies (requires pip install)
+fpdf2
