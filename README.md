@@ -15,16 +15,50 @@ Scan IP addresses, file hashes, domains, and URLs against the **VirusTotal API**
 - **🛑 Smart quota handling** — Detects 429 / QuotaExceeded errors, stops further checks immediately, and saves partial results so you don't lose progress.
 - **📄 Beautiful PDF reports** — Clean, professional multi-page PDF with summary cards, color-coded result rows, and repeated headers.
 
+## ⚙️ Usage
+
+```text
+python3 virustotal_check.py (--ip IP | --hash HASH | --domain DOMAIN | --url URL | --file FILE)
+                         [--thread {1,3,5,8}] [--format {txt,csv,json,pdf,html,all}]
+                         [--output FILE]
+```
+
+| Argument | Description |
+|---|---|
+| `--ip IP` | Single IP address to check |
+| `--hash HASH` | Single file hash (MD5, SHA-1, SHA-256) to check |
+| `--domain DOMAIN` | Single domain to check |
+| `--url URL` | Single URL to check |
+| `--file, -f FILE` | File with up to 500 indicators (one per line, auto-detected) |
+| `--thread, -t {1,3,5,8}` | Thread speed (default: 3) |
+| `--format {txt,csv,json,pdf,html,all}` | Output format(s) (default: txt) |
+| `--output, -o FILE` | Save output to file (base name for multiple formats) |
+
+## 💻 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yufanphombolimbu/threat-sight.git
+cd threat-sight
+
+# Install dependencies
+pip3 install -r requirements.txt
+```
+
+## 🔑 Set up your VirusTotal API key
+
+Open `virustotal_check.py` and replace the placeholder with your actual API key:
+
+```python
+VT_API_KEY = "your_virustotal_api_key_here"
+```
+
+> 💡 You can get a free API key by signing up at [virustotal.com](https://www.virustotal.com).
+
 ## 📋 Requirements
 
 - Python 3.9+
 - `fpdf2` (for PDF output)
-
-Install dependencies:
-
-```bash
-pip3 install -r requirements.txt
-```
 
 ## 🎯 How to Use
 
